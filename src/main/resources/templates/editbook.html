@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+<link type="text/css" rel="stylesheet" href="css.bootstrap.min.css" th:href="@{css/bootstrap.min.css}">
 <title>Book Store</title>
 </head>
 <body>
 	<h1>Edit a book</h1>
-	<form th:object="${book}" th:action="@../save}" action="#" method="post">
-		<input type="hidden" th:field="*{id}" class="form-control"/>
-		<input type="text" th:field="*{title}"/>
-		<input type="text" th:field="*{author}"/>
-		<input type="text" th:field="*{year}"/>
-		<input type="text" th:field="*{esbn}"/>
-		<input type="text" th:field="*{category}"/>
-		<input type="submit" class="btn btn-success" value="Save"></input>
-	</form>
+	<div>
+		<form th:object="${book}" th:action="@{/add}" action="#" method="post">
+			<label for="author">Author</label>
+			<input type="text" id="author" th:field="*{author}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<label for="title">Title</label>
+			<input type="text" id="title" th:field="*{title}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<label for="year">Year</label>
+			<input type="text" id="year" th:field="*{year}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<label for="isbn">ISBN</label>
+			<input type="text" id="isbn" th:field="*{isbn}" />
+			
+			<div style="clear: both; display: block; height: 10px;"></div>			
+		  	<label for="catlist1">Category</label>
+			 <select id="catlist1" th:field="*{category}" class="form-control">
+       			<option th:each="category: ${categories}" th:value="${category.categoryid}" th:text="${category.name}"></option>
+    		</select>
+			<input type="submit" value="Submit" class="btn btn-success"/> <input type="reset" value="Reset" class="btn btn-danger" />
+		</form>
+	</div>	
 </body>
 </html>

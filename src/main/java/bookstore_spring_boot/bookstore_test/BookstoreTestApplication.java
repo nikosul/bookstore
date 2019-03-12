@@ -11,6 +11,8 @@ import bookstore_spring_boot.bookstore_test.entity.Book;
 import bookstore_spring_boot.bookstore_test.entity.BookRepository;
 import bookstore_spring_boot.bookstore_test.entity.Category;
 import bookstore_spring_boot.bookstore_test.entity.CategoryRepository;
+import bookstore_spring_boot.bookstore_test.entity.User;
+import bookstore_spring_boot.bookstore_test.entity.UserRepository;
 
 @SpringBootApplication
 public class BookstoreTestApplication {
@@ -21,7 +23,7 @@ public class BookstoreTestApplication {
 		SpringApplication.run(BookstoreTestApplication.class, args);
 	}
 	@Bean 
-	public CommandLineRunner booklistTest(BookRepository repository, CategoryRepository crepository) {
+	public CommandLineRunner booklistTest(BookRepository repository, CategoryRepository crepository, UserRepository urepository) {
 		return (args) -> {
 			log.info("testing 1, 2, 3");
 			crepository.save(new Category("Fantasy"));
@@ -37,6 +39,14 @@ public class BookstoreTestApplication {
 			repository.save(new Book("George R.R. Martin", "A Dance with Dragons", 2011, 4545455-52, crepository.findByName("Fantasy").get(0)));
 			repository.save(new Book("George R.R. Martin", "The Winds of Winter", 2020, 5656566-63, crepository.findByName("Fantasy").get(0)));
 			repository.save(new Book("George R.R. Martin", "A Dream of Spring", 2025, 6767676-74, crepository.findByName("Fantasy").get(0)));
+			
+			
+			// Create users: admin/admin user/user
+			User user1 = new User("user", "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6", "USER", "USER");
+			User user2 = new User("admin", "$2a$10$0MMwY.IQqpsVc1jC8u7IJ.2rT8b0Cd3b3sfIBGV2zfgnPGtT4r0.C", "ADMIN", "ADMIN");
+			urepository.save(user1);
+			urepository.save(user2); 
+			
 			
 			log.info("list all books");
 			for (Book book : repository.findAll()) {
