@@ -5,6 +5,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 
 import bookstore_spring_boot.bookstore_test.domain.Book;
@@ -15,11 +17,15 @@ import bookstore_spring_boot.bookstore_test.domain.User;
 import bookstore_spring_boot.bookstore_test.domain.UserRepository;
 
 @SpringBootApplication
-public class BookstoreTestApplication {
+public class BookstoreTestApplication extends SpringBootServletInitializer {
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(BookstoreTestApplication.class);
+	}
 	
 	private static final Logger log = LoggerFactory.getLogger(BookstoreTestApplication.class);
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		SpringApplication.run(BookstoreTestApplication.class, args);
 	}
 	@Bean 

@@ -11,6 +11,7 @@
 	<groupId>bookstore_spring_boot</groupId>
 	<artifactId>bookstore_test</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>bookstore_test</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -19,6 +20,11 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
