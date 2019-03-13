@@ -7,12 +7,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import bookstore_spring_boot.bookstore_test.entity.Book;
-import bookstore_spring_boot.bookstore_test.entity.BookRepository;
-import bookstore_spring_boot.bookstore_test.entity.Category;
-import bookstore_spring_boot.bookstore_test.entity.CategoryRepository;
-import bookstore_spring_boot.bookstore_test.entity.User;
-import bookstore_spring_boot.bookstore_test.entity.UserRepository;
+import bookstore_spring_boot.bookstore_test.domain.Book;
+import bookstore_spring_boot.bookstore_test.domain.BookRepository;
+import bookstore_spring_boot.bookstore_test.domain.Category;
+import bookstore_spring_boot.bookstore_test.domain.CategoryRepository;
+import bookstore_spring_boot.bookstore_test.domain.User;
+import bookstore_spring_boot.bookstore_test.domain.UserRepository;
 
 @SpringBootApplication
 public class BookstoreTestApplication {

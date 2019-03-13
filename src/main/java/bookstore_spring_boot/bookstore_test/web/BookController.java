@@ -1,4 +1,4 @@
-package bookstore_spring_boot.bookstore_test.controller;
+package bookstore_spring_boot.bookstore_test.web;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import bookstore_spring_boot.bookstore_test.entity.BookRepository;
-import bookstore_spring_boot.bookstore_test.entity.CategoryRepository;
-import bookstore_spring_boot.bookstore_test.entity.Book;
+import bookstore_spring_boot.bookstore_test.domain.Book;
+import bookstore_spring_boot.bookstore_test.domain.BookRepository;
+import bookstore_spring_boot.bookstore_test.domain.CategoryRepository;
 
 
 @Controller

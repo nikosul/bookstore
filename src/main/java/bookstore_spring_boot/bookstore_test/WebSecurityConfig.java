@@ -9,7 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import bookstore_spring_boot.bookstore_test.controller.UserDetailServiceImpl;
+import bookstore_spring_boot.bookstore_test.web.UserDetailServiceImpl;
 
 
 @Configuration

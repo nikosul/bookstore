@@ -1,4 +1,4 @@
-package bookstore_spring_boot.bookstore_test.entity;
+package bookstore_spring_boot.bookstore_test.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

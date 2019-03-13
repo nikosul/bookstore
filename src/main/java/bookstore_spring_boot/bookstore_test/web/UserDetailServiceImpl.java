@@ -1,4 +1,4 @@
-package bookstore_spring_boot.bookstore_test.controller;
+package bookstore_spring_boot.bookstore_test.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -7,8 +7,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import bookstore_spring_boot.bookstore_test.entity.User;
-import bookstore_spring_boot.bookstore_test.entity.UserRepository;
+import bookstore_spring_boot.bookstore_test.domain.User;
+import bookstore_spring_boot.bookstore_test.domain.UserRepository;
 
 @Service
 public class UserDetailServiceImpl implements UserDetailsService  {

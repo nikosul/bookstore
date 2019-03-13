@@ -1,4 +1,4 @@
-package bookstore_spring_boot.bookstore_test.controller;
+package bookstore_spring_boot.bookstore_test.web;
 
 import javax.validation.Valid;
 
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import bookstore_spring_boot.bookstore_test.entity.RegisterUser;
-import bookstore_spring_boot.bookstore_test.entity.User;
-import bookstore_spring_boot.bookstore_test.entity.UserRepository;
+import bookstore_spring_boot.bookstore_test.domain.RegisterUser;
+import bookstore_spring_boot.bookstore_test.domain.User;
+import bookstore_spring_boot.bookstore_test.domain.UserRepository;
 
 
 @Controller
