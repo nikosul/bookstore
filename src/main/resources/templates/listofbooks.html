@@ -6,7 +6,7 @@
 </head>
 <body>
 	<div class="col-md-4">
-	<h1>List of books</h1>
+	<h1>List of greatest books</h1>
 	</div>
 	<div class="col-md-4">
 		<h3 th:inline="text">Welcome [[${#httpServletRequest.remoteUser}]]</h3>
@@ -23,6 +23,7 @@
 			<th>Year</th>
 			<th>ISBN</th>
 			<th>Category</th>
+			<th></th>
 			<th sec:authorize="hasRole('ADMIN')"> </th>
 		</tr>
 
