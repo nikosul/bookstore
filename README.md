@@ -1,6 +1,6 @@
 # Bookstore
 > Java Spring Boot MVC app
-> https://bookstoremvc.herokuapp.com/
+* https://bookstoremvc.herokuapp.com/
 
 ## Features
 The app has a list of books which appears the same for all users. 
