@@ -1,31 +1,49 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
-    <title>Add user</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link type="text/css" rel="stylesheet" th:href="@{css/bootstrap.min.css}" />
+<link type="text/css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+<link type="text/css" rel="stylesheet" th:href="@{/css/floating-labels.css}" />
+<title>Book Store</title>
 </head>
 <body>
-	<h1>Register</h1>
-     <div class="col-md-4">
-		<form th:object="${registeruser}" th:action="@{/saveuser}" action="#" method="post">
-			<div>
-				<label> Username :<input type="text" th:field="*{username}" class="form-control"/></label>
-				<p th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username Error</p>	
+   <div class="container">		
+		<form th:object="${registeruser}" th:action="@{/saveuser}" action="#" method="post" class="form-signin">
+		
+		<div class="text-center mb-4">
+         	<img class="mb-4" src="/images/undraw_Add_user_re_5oib.svg" alt="" width="172" height="172">
+    		<h1 class="h3 mb-3 font-weight-normal">Book Store</h1>
+    		<p>Discover amazing books to read! <br>Fill in the required fields to create a new user</p>
+  		</div>
+			<div class="form-label-group">
+				<input type="text" th:field="*{username}" class="form-control"/>
+				<label for="username">Username</label>
+				<p class="text-muted text-center" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username Error</p>	
 			</div>
-			<div>
-				<label> Password :<input type="password" th:field="*{password}" class="form-control"/></label>
-				<p th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</p>	
+			<div class="form-label-group">
+				<input type="password" th:field="*{password}" class="form-control"/>
+				<label for="password">Password</label>
+				<p class="text-muted text-center" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</p>	
 			</div>
-			<div>
-				<label> Re-type Password: <input type="password" th:field="*{passwordCheck}" class="form-control"/></label>
-				<p th:if="${#fields.hasErrors('passwordCheck')}" th:errors="*{passwordCheck}">Password Match Error</p>	
+			<div class="form-label-group">
+				<input type="password" th:field="*{passwordCheck}" class="form-control"/>
+				<label for="password">Repeat password</label>
+				<p class="text-muted text-center" th:if="${#fields.hasErrors('passwordCheck')}" th:errors="*{passwordCheck}">Password Match Error</p>	
 			</div>
-			<div>
-				<label> Email : <input type="email" th:field="*{email}" class="form-control"/></label>
-				<p th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</p>	
+			<div class="form-label-group">
+				<input type="email" th:field="*{email}" class="form-control"/>
+				<label for="email">Email</label>
+				<p class="text-muted text-center" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</p>	
 			</div>	
-			<input type="submit" class="btn btn-success" value="Register"></input>		
+			
+			<div class="d-grid gap-2">
+			<button type="submit" class="btn btn-primary" value="Register">Register</button>	
+			</div>
+			<div style="padding-top: 20px"></div>
+			<div class="text-center"><a th:href="@{/} ">Return to previous page</a></div>	
+			<div style="padding-top: 60px"></div>
+        	<p class="text-muted text-center">Java Spring Boot MVC powered with Bootstrap</p>
+    		<p class="text-muted text-center">&copy; 2018 - 2021</p>
 		</form>
 	</div>
 </body>

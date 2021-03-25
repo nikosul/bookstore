@@ -55,6 +55,6 @@ public class UserController {
 		 else {
 			 return "register";
 		 }
-		 return "redirect:/login";
+		 return "redirect:/";
 	 }
 }

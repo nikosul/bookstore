@@ -1,24 +1,55 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
+<link type="text/css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+<link type="text/css" rel="stylesheet" th:href="@{/css/floating-labels.css}" />
 <title>Book Store</title>
-<link type="text/css" rel="stylesheet" th:href="@{css/bootstrap.min.css}" />
 </head>
    <body>
-     <div class="col-md-4 col-md-offset-4">
-        <div class="alert alert-danger" th:if="${param.error}">
-            Invalid username and password.
+   
+   	  <!-- <div th:if="${param.error}">
+          <div class="alert alert-danger">
+              Invalid username and password.
+      	  </div>
+      </div>
+      <div th:if="${param.logout}">
+          <div class="alert alert-danger">
+          	  You have been logged out.
+          </div>
+      </div> -->
+   	  
+   	  <!-- <div th:if="${loginError}"><div class="alert alert-primary" role="alert">Wrong username or password</div></div> -->
+   	  <!-- <p th:if="${loginError}" class="text-muted text-center">Wrong user or password</p> -->
+   	  
+      <form th:action="@{/login}" method="post" class="form-signin">
+      
+      
+      
+      	<div class="text-center mb-4">
+    		<img class="mb-4" src="/images/undraw_book_lover_mkck.svg" alt="" width="172" height="172">
+    		<h1 class="h3 mb-3 font-weight-normal">Book Store</h1>
+    		<p>Discover amazing books to read!</p>
+  		</div>
+        
+        <div class="form-label-group">
+            <input type="text" class="form-control" id="username" name="username" required/>
+            <label for="username">Username</label> 
         </div>
-        <div class="alert alert-warning" th:if="${param.logout}">
-            You have been logged out.
+        
+        <div class="form-label-group">
+            <input type="password" class="form-control" id="password" name="password" required/>
+            <label for="password">Password</label>
         </div>
-        <form th:action="@{/login}" method="post">
-            <div><label> Username : <input type="text" name="username"/> </label></div>
-            <div><label> Password: <input type="password" name="password"/> </label></div>
-            <div><input type="submit" class="btn btn-success" value="Sign In"/></div>
-        </form>
-        <a th:href="@{/register}">Register new user</a>
-	</div>
+        <p th:if="${loginError}" class="text-muted text-center">Wrong username or password</p>
+        <div class="d-grid gap-2">
+        <button class="btn btn-primary" type="submit" value="Sign In">Sign in</button>
+        </div>
+        <div style="padding-top: 20px"></div>
+        <div class="text-center"><a th:href="@{/register} ">Register new user</a></div>
+        <div style="padding-top: 60px"></div>
+        <p class="text-muted text-center">Java Spring Boot MVC powered with Bootstrap</p>
+    	<p class="text-muted text-center">&copy; 2018 - 2021</p>
+      </form>
     </body>
 </html>
