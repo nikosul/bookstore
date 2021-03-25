@@ -12,6 +12,7 @@ The app has a list of books which appears the same for all users.
 * Spring Boot
 * MVC
 * Thymeleaf
+* DataTables
 * Bootstrap
 
 ## Screenshots
