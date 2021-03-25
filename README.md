@@ -8,8 +8,7 @@ The app has a list of books which appears the same for all users.
 * Create your own user to login or use the default credentials 
 
 ## Screenshots
-![Loginpage screenshot](./src/main/resources/static/images/loginpage.PNG)
-
+![Loginpage screenshot](./src/main/resources/static/images/loginpage.PNG){:height="70%" width="100%"}
 ![Booklist screenshot](./src/main/resources/static/images/booklist.PNG)
 
 ## Technologies
