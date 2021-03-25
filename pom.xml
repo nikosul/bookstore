@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>bookstore_spring_boot</groupId>
-	<artifactId>bookstore_test</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>bookstoremvc</artifactId>
+	<version>1.0</version>
 	<packaging>war</packaging>
-	<name>bookstore_test</name>
+	<name>bookstoremvc</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
